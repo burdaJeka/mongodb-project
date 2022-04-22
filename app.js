@@ -17,6 +17,7 @@ require("./routes")(app);
 //     console.log(error.message);
 //   });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT
+, () => {
   console.log(`Server started...С\nServer port is : ${PORT}`);
 });
