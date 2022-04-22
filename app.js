@@ -18,5 +18,5 @@ require("./routes")(app);
 //   });
 
 app.listen(PORT, () => {
-  console.log(`Server started... \n${new Date()} \nServer port is : ${PORT}`);
+  console.log(`Server started...С\nServer port is : ${PORT}`);
 });
