@@ -1,4 +1,4 @@
-const DB_HOST = require("./config.js");
+//const DB_HOST = require("./config.js");
 // const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
