@@ -6,8 +6,7 @@ const {DB_HOST} = process.env;
 const PORT = 3000;
 
 require("./routes")(app);
-mongoose
-  .connect(DB_HOST, {
+  mongoose.connect(DB_HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
