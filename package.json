@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/burdaJeka/mongodb-project#readme",
   "dependencies": {
+    "express": "^4.17.3",
     "mongoose": "^6.3.0"
   },
   "devDependencies": {
