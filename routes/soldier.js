@@ -11,6 +11,7 @@ const {
 } = require("../controllers/soldierCtrl");
 const router = Router();
 
+router.get('/' , soldiersTable)
 router.get("/main", soldiersTable);
 router.get("/update", getUpdate);
 router.get("/delete", getDelete);
