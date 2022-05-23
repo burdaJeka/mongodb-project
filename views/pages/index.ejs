@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<main>
+  <div class="container">
+		<h1><%= message %></h1>
+		<h2>Soldiers</h2>
+		<% if(soldiers.length) {%>
+		<table class="table table-dark table-striped">
+			<thead>
+			  <tr>
+					<th scope="col">id</th>
+				 <th scope="col">Name</th>
+				 <th scope="col">Surname</th>
+				 <th scope="col">Age</th>
+				 <th scope="col">Rank</th>
+         <th scope="col">Gender</th>
+			  </tr>
+			</thead>
+			<tbody>
+				<% soldiers.forEach( soldier => { %>
+			  <tr>
+				 <td><%= soldier.id %></td>
+				 <td><%= soldier.name %></td>
+				 <td><%= soldier.surname %></td>
+				 <td><%= soldier.age %></td>
+         <td><%= soldier.rank %></td>
+				 <td><%= soldier.gender %></td>
+			  </tr>
+			  <% }) %>
+			</tbody>
+		 </table>
+		 <% } else {%>
+			<h2 style="color: crimson;" >Oops , no soldiers!</h2>
+		<% } %>
+	</div>
+<footer class="pt-4 ">
+    <%- include('../partials/footer'); %>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

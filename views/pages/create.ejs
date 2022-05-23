@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<main>
+  <form class="container" action="/create" method="post">
+    <div class="row">
+      <h1 class="text-success mx-3"><%- message -%></h1>
+      <div class="row">
+          <div class="col-md-5 mt-5">
+          <div class="form-check d-flex flex-column mb-mt-5">
+            <input type="number" class="form-control mb-5" placeholder="id Soldier"  name="id">
+            <input type="text" class="form-control mb-5" placeholder="First name"  name="name">
+            <input type="text" class="form-control mb-5" placeholder="Surname"  name="surname">
+            <input type="number" class="form-control mb-5" placeholder="Age"  name="age">
+            <select class="form-select" aria-label="rank" name="rank">
+              <option selected aria-placeholder="rank"></option>
+              <option value="Soldier">Soldier</option>
+              <option value="Cadet">Cadet</option>
+              <option value="Sergeant">Sergeant</option>
+              <option value="Officer">Officer</option>
+            </select>
+            <div>
+              <div class="form-check mt-3">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male">
+                <label class="form-check-label" for="gender">
+                  Male
+                </label>
+              </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" checked>
+                <label class="form-check-label" for="gender">
+                  Female
+                </label>
+              </div>
+          </div>
+            <button class="btn btn-outline-success mx-4 mt-" type="submit">Add new warrior</button>
+          </div>
+        </div>
+        <div class="col-md-7 mt-5">
+          <img src="img/pic.png" alt="pic" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<footer class="pt-4 ">
+    <%- include('../partials/footer'); %>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

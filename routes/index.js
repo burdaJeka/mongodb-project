@@ -1,8 +1,5 @@
-//point of all routes
-const aboutRoutes = require("./about");
-const mainRoutes = require("./main")
+// //point of all routes
+// const express = require('express');
 
-module.exports = function (app) {
-  aboutRoutes(app);
-  mainRoutes(app);
-};
+
+
