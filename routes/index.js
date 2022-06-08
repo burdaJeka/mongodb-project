@@ -1,5 +1,7 @@
-// //point of all routes
-// const express = require('express');
+const soldierRoutes = require("./soldier");
+const apiSoldierRoutes = require("./api-soldier");
 
-
-
+module.exports = {
+  soldierRoutes,
+  apiSoldierRoutes,
+};

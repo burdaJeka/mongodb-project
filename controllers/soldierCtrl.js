@@ -1,5 +1,6 @@
 const { Soldier } = require("../models/soldier");
 
+
 const soldiersTable = async (req, res) => {
   try {
     const soldiers = await Soldier.find({});
@@ -39,7 +40,7 @@ const getDelete = (req, res) => {
 const createSoldier = async (req, res) => {
   try {
     const soldier = new Soldier({
-			id: req.body.id,
+      id: req.body.id,
       name: req.body.name,
       surname: req.body.surname,
       age: req.body.age,
@@ -51,34 +52,37 @@ const createSoldier = async (req, res) => {
     console.log(`Error: ${e}!`);
     res.status(500).json(e);
   }
-  res.redirect('/main');
+  res.redirect("/main");
 };
 
-const deleteSoldier =  async (req, res) => {
-	
-		const id = req.body.id;
-		await Soldier.deleteOne({id}, () => {
-			console.log(`Soldier with id ${id} deleted !`)
-		}).clone().catch((e) => {
+//-- DELETE SOLDIERS --//
+
+const deleteSoldier = async (req, res) => {
+  const id = req.body.id;
+  await Soldier.deleteOne({ id }, () => {
+    console.log(`Soldier with id ${id} deleted !`);
+  })
+    .clone()
+    .catch((e) => {
       console.log(`Error: ${e}!`);
       res.status(500).json(e);
-    })
-		res.status(200).redirect('/main');
+    });
+  res.status(200).redirect("/main");
 };
 
-const updateSoldier =  async (req, res) => {
-  try{
+//-- UPDATE SOLDIERS --//
+
+const updateSoldier = async (req, res) => {
+  try {
     const id = req.body.id;
-    console.log(req.body.id)
-    await Soldier.updateOne({id}, req.body );
-    res.redirect('/main');
-  } catch (e){
+    console.log(req.body.id);
+    await Soldier.updateOne({ id }, req.body);
+    res.redirect("/main");
+  } catch (e) {
     console.log(`Error: ${e}!`);
     res.status(500).json(e);
   }
-}
-
-
+};
 
 module.exports = {
   soldiersTable,
@@ -87,6 +91,6 @@ module.exports = {
   getUpdate,
 
   createSoldier,
-	deleteSoldier,
-  updateSoldier
+  deleteSoldier,
+  updateSoldier,
 };

@@ -1,10 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 const path = require("path");
-const { cache } = require("ejs");
-const soldierRoutes = require("./routes/soldier");
+const routes = require("./routes/index");
 const app = express();
+require("dotenv").config();
 const { DB_HOST, PORT = 3000 } = process.env;
 app.use(express.static(path.join(__dirname, "public")));
 const bodyParser = require("body-parser");
@@ -12,7 +11,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
-app.use(soldierRoutes);
+app.use(routes.soldierRoutes, routes.apiSoldierRoutes);
 
 mongoose
   .connect(DB_HOST, {
